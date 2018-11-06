@@ -20,6 +20,7 @@
   "author": "Shubham Kucheria",
   "homepage": "https://github.com/shubhamkucheria/zyshort#readme",
   "dependencies": {
+    "async": "^2.6.1",
     "body-parser": "^1.17.2",
     "chai": "^4.2.0",
     "ejs": "^2.5.6",
