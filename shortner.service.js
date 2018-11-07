@@ -64,20 +64,22 @@ function getFromDb(uid, request, resp){
         }
         else if(res.length == 1){
           link_db = res[0]['link'];
+          // it checks if url doesn't have http or https
+          link_db = link_db.match(/^http[s]*:\/\//) ? link_db : 'http://' + link_db;
           resp.writeHead(302, {
             'Location': link_db
             //add other headers here...
           });
           resp.end();
         }
-        // else{
-        //   console.log('No such UID exists!');
-        //   resp.writeHead(301,
-        //   {Location: '/short/error404'}
-        //   );
-        //   link_db = 'NULL';
-        //   resp.end();
-        // }
+        else{
+          console.log('No such UID exists!');
+          resp.writeHead(301,
+          {Location: '/short/error404'}
+          );
+          link_db = 'NULL';
+          resp.end();
+        }
         db.close();
       });
 
