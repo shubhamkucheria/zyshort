@@ -3,8 +3,7 @@ zyshort is url shortner web app <br>
 webapp to shorten the url to websites and use them.
 
 ## Getting started
-zyshort for your Local Host as well as deployed to heroku <br>
-check it out [zyshort](https://zyshort.herokuapp.com) <br>
+zyshort for your Local Host <br>
 
 
 ### Including tests
@@ -72,9 +71,6 @@ Finally:
       <pre> node app.js</pre>
   * open the localhost
       <pre>localhost:5000/short<pre>
-Or:
-  * check it out here
-      <pre> [zyshort](https://zyshort.herokuapp.com) </pre>
 
 <br>      
 
