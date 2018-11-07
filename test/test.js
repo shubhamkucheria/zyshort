@@ -1,28 +1,96 @@
-"use strict";
-// NPM install mongoose and chai. Make sure mocha is globally
-// installed
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const chai = require('chai');
-const expect = chai.expect;
-const testSchema = new Schema({ link: String, id: String });
-var shortid = require('shortid');
-var async = require('async');
-
-//Create a new collection called 'uids'
-const uids = mongoose.model('uids', testSchema);
-describe('Functionality Tests', function() {
-  //Before starting the test, create a sandboxed database connection
-  //Once a connection is established invoke done()
-  before(function (done) {
-    mongoose.connect('mongodb://localhost:27017/database');
-    const db = mongoose.connection;
-    db.on('error', console.error.bind(console, 'connection error'));
-    db.once('open', function() {
-      console.log('We are connected to test database!');
-      done();
+/*var async = require('async');
+var shortnerService = require('../shortner.service');
+var ourDomainUrl = 'localhost:5000/';
+var externalUrl = 'https://jsonplaceholder.typicode.com/todos/1';
+*/
+var assert = require('assert');
+describe('Array', function() {
+  describe('#indexOf()', function() {
+    it('should return -1 when the value is not present', function() {
+      assert.equal([1,2,3].indexOf(4), -1);
     });
   });
+});
+
+
+/*describe('Functionality Tests', function() {
+    it('able to generate hash (shortid)', function(done) {
+      // it will generate random id (hash value)
+      let uid = shortnerService.getUid();
+      if (uid.length === 0) {
+        throw new Error('Not able to generate hash!');
+      } else {
+        console.log(`generate hash success ${uid}`);
+      }
+      done();
+    });
+
+    it('able to generate uid object which include url and shorten url', function(done) {
+      // it will generate random id (hash value)
+      let uid = shortnerService.getUid();
+      // it should generate uid object
+      let uidObj = shortnerService.getUidObject(ourDomainUrl, externalUrl, uid);
+      if (uidObj.link === externalUrl && uidObj.id === ourDomainUrl+uid) {
+        console.log(`generate uid object success ${JSON.stringify(uidObj)}`);
+        done();
+      } else {
+        throw new Error('Not able to generate hash!');
+      }
+    });
+  });
+*/
+
+// describe('Functionality Tests', function() {
+//     it('New data saved to database', function(done) {
+//       // it will generate random id (hash value)
+//       var uid = 'localhost:5000/'+ shortnerService.getUid();
+//       var url = 'https://jsonplaceholder.typicode.com/todos/1'
+//       var testName = uids({
+//         link: url,
+//         id: uid
+//       });
+//       console.log(testName);
+//       done();
+
+//       // testName.save(done);
+//     });
+
+//     it('New data saved to database', function(done) {
+//       // it will generate random id (hash value)
+//       shortnerService.getUidObject();
+//       done();
+
+//       testName.save(done);
+//     });
+//   });
+
+// describe('Functionality Tests', function() {
+//   //Before starting the test, create a sandboxed database connection
+//   //Once a connection is established invoke done()
+//   before(function (done) {
+//     mongoose.connect('mongodb://localhost:27017/database');
+//     const db = mongoose.connection;
+//     db.on('error', console.error.bind(console, 'connection error'));
+//     db.once('open', function() {
+//       console.log('We are connected to test database!');
+//       done();
+//     });
+//   });
+
+
+
+// describe('Functionality Tests', function() {
+//   //Before starting the test, create a sandboxed database connection
+//   //Once a connection is established invoke done()
+//   before(function (done) {
+//     mongoose.connect('mongodb://localhost:27017/database');
+//     const db = mongoose.connection;
+//     db.on('error', console.error.bind(console, 'connection error'));
+//     db.once('open', function() {
+//       console.log('We are connected to test database!');
+//       done();
+//     });
+//   });
 
 
   // describe('Test to generate hash id and url insert', function() {
@@ -68,7 +136,7 @@ describe('Functionality Tests', function() {
   // });
 
 
-  describe('async Test to generate hash id and url insert for 5000 request', function() {
+  /*describe('async Test to generate hash id and url insert for 5000 request', function() {
     it('New data saved to database', function(done) {
       var i = 1;
       var my_task = function(callback) {
@@ -123,9 +191,10 @@ describe('Functionality Tests', function() {
 
   // });
   //After all tests are finished drop database and close connection
-  after(function(done){
+  */
+  // after(function(done){
     // mongoose.connection.db.dropDatabase(function(){
-      mongoose.connection.close(done);
-    });
+      // mongoose.connection.close(done);
+    // });
   // });
-});
+// });
