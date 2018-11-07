@@ -74,7 +74,7 @@ Finally:
       <pre>localhost:5000/short<pre>
 Or:
   * check it out here
-      <pre> [zyshort](https://zyshort.herokuapp.com) </pre>
+    [zyshort](https://zyshort.herokuapp.com) </pre>
 
 <br>      
 
