@@ -58,7 +58,6 @@ function getFromDb(uid, request, resp){
       var collection = db.collection('uids');
 
       collection.find({id:id_db}).toArray(function(err,res){
-        console.log('length---------------:', res.length);
         if(err){
           console.log(err);
         }
